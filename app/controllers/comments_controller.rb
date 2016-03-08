@@ -3,19 +3,19 @@ class CommentsController < ApplicationController
   def index
     post = Post.find(params[:post_id])
     @comments = post.comments
-	end
+  end
 
-	def show
+  def show
     post = Post.find(params[:post_id])
     @comment = post.comments.find(params[:id])
   end
 
-	def new
+  def new
     post = Post.find(params[:post_id])
     @comment = post.comments.build
-	end
+  end
 
-	def create
+  def create
     post = Post.find(params[:post_id])
     @comment = post.comments.new(comment_params)
     if @comment.save
