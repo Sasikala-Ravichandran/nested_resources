@@ -1,0 +1,20 @@
+<%= form_for([@comment.post, @comment]) do |f| %>
+  
+  <% if @comment.errors.any? %>
+    <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+    <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :commenter %><br/>
+  <%= f.text_field :commenter %>
+
+  <%= f.label :body %><br/>
+  <%= f.text_area :body %>
+
+  <%= f.submit %>
+ 
+<% end %>

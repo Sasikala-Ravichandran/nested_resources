@@ -1,0 +1,4 @@
+<h3><%= @comment.commenter %></h3>
+<p><%= @comment.body %></p>
+<p><%= link_to "Post", post_path(@comment.post) %>
+<%= link_to "Edit", edit_post_comment_path(@comment.post, @comment) %></p>

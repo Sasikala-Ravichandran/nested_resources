@@ -1,0 +1,8 @@
+<h2> Comments by <%= comment.commenter %></h2>
+<p> <%= comment.body %></p>
+<p>Posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> later</p>
+<p><%= link_to 'Show', [comment.post, comment] %>
+<%= link_to 'Edit', edit_post_comment_path(comment.post, comment)%>
+<%= link_to 'Delete', [comment.post, comment], method: :delete %>
+<%= link_to 'Destroy', [comment.post, comment], method: :delete %>
+<%= link_to 'Destroy', [comment.post, comment], :confirm => 'Are you sure?', :method => :delete %></p>
